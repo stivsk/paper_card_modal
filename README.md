@@ -1,7 +1,7 @@
 # Paper Card Modal
 https://stivsk.github.io/paper_card_modal/
 ## First, get the crew
-#### Primero, conseguir la tripulación
+### Primero, conseguir la tripulación
 Add the <b>paperCardModal.css</b> then <b>papperCardModal.js</b> and <b>finally</b> your <b>main.js</b>
 <html lang="en">
 <body>
