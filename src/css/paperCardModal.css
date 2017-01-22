@@ -2,6 +2,18 @@
   padding: 10pt 30pt 30pt 30pt;
 }
 
+.global_container {
+  align-items: center;
+  background: rgba(0, 0, 0, .92);
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .img_res {
   width: 100%;
   overflow: hidden;
@@ -21,15 +33,11 @@
 .modal_container {
   background: white;
   border-radius: 2px;
-  bottom: 3em;
-  left: 0;
+  position: relative;
   margin: 0 auto;
-  max-width: 430px;
+  max-width: 27em;
   overflow: auto;
-  position: absolute;
-  right: 0;
-  top: 3em;
-  width: 95%;
+  width: 100%;
 }
 
 .raised {

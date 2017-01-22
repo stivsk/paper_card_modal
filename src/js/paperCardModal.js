@@ -9,7 +9,7 @@ function makeModal(btn, info){
 		// using showModal(info), who needs the info param
 		// of the makeModal(btn, info) method, we organize
 		// the respecting information into the modal structure
-		showModal(info) 
+		showModal(info);
 	});
 }
 // starts the modal operation
@@ -33,10 +33,10 @@ function addClasses(obj, classes){
 	}
 }
 // creates everything inside the modal
-function modalInsideStructure(obj, modalInfo){
+function modalInsideStructure(obj, modalInfo, global_container){
 	// create elements of the inside structure
 	var b = $.createElement('ARTICLE');
-	var c = $.createElement('SECTION')
+	var c = $.createElement('SECTION');
 	var p = $.createElement('IMG');
 	var t = $.createElement('HEADER');
 	var x = $.createElement('I');
@@ -57,24 +57,27 @@ function modalInsideStructure(obj, modalInfo){
 	// nest title and body inside container
 	c.append(t, b);
 	// establishes whos gonna close the modal
-	setModalCloser(x, obj);
+	setModalCloser(x, global_container);
 	// finally append the picture and the container
 	// to the modal who calls it.
 	obj.append(x, p, c);
 }
 // establishes whos gonna close the modal 
-function setModalCloser(closer, modal){
+function setModalCloser(closer, container){
 	closer.addEventListener('click', function(){
-		modal.classList.add('material_collapse');
-		modal.addEventListener('animationend', function(){
-			modal.remove();
+		container.classList.add('material_collapse');
+		container.addEventListener('animationend', function(){
+			container.remove();
 		});
 	});
 }
 // It structures the modal and give it's properties
 function modalStructure(obj, id, modalWindow){
-	// add an id
+	// create the global container
+	var global_container = $.createElement('DIV');
+	// add some ids
 	obj.id = id;
+	global_container.id = 'modal_global_container_id';
 	// add some classes
 	addClasses(obj, 
 		[
@@ -83,8 +86,11 @@ function modalStructure(obj, id, modalWindow){
 			'material'
 		]
 	);
+	global_container.classList.add('global_container');
 	// then, we create the inside structure
-	modalInsideStructure(obj, modalWindow);
+	modalInsideStructure(obj, modalWindow, global_container);
+	// add it to the global container
+	global_container.append(obj);
 	// and finally we append it to the body
-	$.body.insertBefore(obj, $.body.firstChild);
+	$.body.insertBefore(global_container, $.body.firstChild);
 }
