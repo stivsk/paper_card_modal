@@ -27,13 +27,13 @@
   margin: 20px;
   position: absolute;
   right: 0;
+  top: 0;
   width: 10px;
 }
 
 .modal_container {
   background: white;
   border-radius: 2px;
-  position: relative;
   margin: 0 auto;
   max-width: 27em;
   overflow: auto;

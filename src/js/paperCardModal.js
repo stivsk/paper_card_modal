@@ -65,10 +65,14 @@ function modalInsideStructure(obj, modalInfo, global_container){
 // establishes whos gonna close the modal 
 function setModalCloser(closer, container){
 	closer.addEventListener('click', function(){
-		container.classList.add('material_collapse');
-		container.addEventListener('animationend', function(){
-			container.remove();
-		});
+		modalCloser(container);
+	});
+}
+// removes an object from the DOM
+function modalCloser(obj){
+	obj.classList.add('material_collapse');
+	obj.addEventListener('animationend', function(){
+		obj.remove();
 	});
 }
 // It structures the modal and give it's properties
