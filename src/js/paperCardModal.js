@@ -18,7 +18,7 @@ function showModal(info) {
 	var modal = $.createElement("DIV");
 	// structure needs the parent container where it's
 	// gonna be stored, an id for it, and the info object
-	modalStructure(modal, 'modal_cont', info);		
+	modalStructure(modal, 'modal_cont', info);
 }
 // assign things where they belong
 function setInformation(modalInfo, txt_title, cuerpo, img_header){
@@ -57,10 +57,11 @@ function modalInsideStructure(obj, modalInfo, global_container){
 	// nest title and body inside container
 	c.append(t, b);
 	// establishes whos gonna close the modal
+	global_container.appendChild(x);
 	setModalCloser(x, global_container);
 	// finally append the picture and the container
 	// to the modal who calls it.
-	obj.append(x, p, c);
+	obj.append(p, c);
 }
 // establishes whos gonna close the modal 
 function setModalCloser(closer, container){
