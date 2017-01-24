@@ -10,6 +10,7 @@
   justify-content: center;
   left: 0;
   position: absolute;
+  overflow: auto;
   right: 0;
   top: 0;
 }
@@ -21,14 +22,15 @@
 
 .icon_close {
   background-image: url(../img/close.png);
-  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 98% 20px;
+  background-size: 10px;
+  bottom: 0;
   cursor: pointer;
-  height: 10px;
-  margin: 20px;
+  left: 0;
   position: absolute;
   right: 0;
   top: 0;
-  width: 10px;
 }
 
 .modal_container {
