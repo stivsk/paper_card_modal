@@ -18,6 +18,6 @@
     "@react-mf/planets/": "https://react.microfrontends.app/planets/010c38f36fc578c406f1aa44d16f6aad9062f2f2/",
     "@react-mf/styleguide/": "https://react.microfrontends.app/styleguide/504c8516e30274fc0e3221a719d5355b14af9500/",
     "@react-mf/root-config/": "https://react.microfrontends.app/root-config/a94792254cd27f8d4414e412bfaaf48ded76a4d0/",
-    "@paper-modal": "https://raw.githubusercontent.com/stivsk/paper_card_modal/master/src/js/paperCardModal.js"
+    "@react-mf/paper-modal": "https://raw.githubusercontent.com/stivsk/paper_card_modal/master/src/js/paperCardModal.js"
   }
 }
