@@ -2,7 +2,7 @@ var $ = document;
 // Creates a modal using, a button and a object with
 // three string properties: 'txt_title', 'txt_body' 
 // and 'img_header'.
-function makeModal(btn, info){
+export function makeModal(btn, info){
 	// We assign a listener to the button who calls 
 	// the modal, and then, we show its respecting content
 	btn.addEventListener('click', function(){ 
@@ -13,7 +13,7 @@ function makeModal(btn, info){
 	});
 }
 // starts the modal operation
-function showModal(info) {
+export function showModal(info) {
 	// Create the modal container
 	var modal = $.createElement("DIV");
 	// structure needs the parent container where it's
@@ -21,19 +21,19 @@ function showModal(info) {
 	modalStructure(modal, 'modal_cont', info);
 }
 // assign things where they belong
-function setInformation(modalInfo, txt_title, cuerpo, img_header){
+export function setInformation(modalInfo, txt_title, cuerpo, img_header){
 	txt_title.innerHTML = modalInfo.txt_title;
 	cuerpo.innerHTML = modalInfo.txt_body;
 	img_header.src = modalInfo.img_header;	
 }
 // add classes to an object
-function addClasses(obj, classes){
+export function addClasses(obj, classes){
 	for (var i = classes.length - 1; i >= 0; i--) {
 		obj.classList.add(classes[i]);
 	}
 }
 // creates everything inside the modal
-function modalInsideStructure(obj, modalInfo, global_container){
+export function modalInsideStructure(obj, modalInfo, global_container){
 	// create elements of the inside structure
 	var b = $.createElement('ARTICLE');
 	var c = $.createElement('SECTION');
@@ -64,20 +64,20 @@ function modalInsideStructure(obj, modalInfo, global_container){
 	obj.append(p, c);
 }
 // establishes whos gonna close the modal 
-function setModalCloser(closer, container){
+export function setModalCloser(closer, container){
 	closer.addEventListener('click', function(){
 		modalCloser(container);
 	});
 }
 // removes an object from the DOM
-function modalCloser(obj){
+export function modalCloser(obj){
 	obj.classList.add('material_collapse');
 	obj.addEventListener('animationend', function(){
 		obj.remove();
 	});
 }
 // It structures the modal and give it's properties
-function modalStructure(obj, id, modalWindow){
+export function modalStructure(obj, id, modalWindow){
 	// create the global container
 	var global_container = $.createElement('DIV');
 	// add some ids
